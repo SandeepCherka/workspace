@@ -56,3 +56,26 @@ resource "aws_security_group" "four" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+
+
+
+
+
+
+variable "instance_type" {
+
+}
+
+variable "instance_name_1" {
+
+}
+
+variable "instance_name_2" {
+
+}
+
+variable "instance_name_3" {
+
+}
+
