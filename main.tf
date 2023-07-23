@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "vpc-06fc4027148f2f672"
+vpc_security_group_ids = "sgr-0c39bc9023f985126"
 tags = {
 Name = var.instance_name_1
 }
@@ -19,7 +19,7 @@ resource "aws_instance" "two" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "vpc-06fc4027148f2f672"
+vpc_security_group_ids = "sgr-0c39bc9023f985126"
 tags = {
 Name = var.instance_name_2
 }
@@ -29,7 +29,7 @@ resource "aws_instance" "three" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "vpc-06fc4027148f2f672"
+vpc_security_group_ids = "sgr-0c39bc9023f985126"
 tags = {
 Name = var.instance_name_3
 }
