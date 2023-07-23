@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "sgr-0c39bc9023f985126"
+vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_1
 }
@@ -19,7 +19,7 @@ resource "aws_instance" "two" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "sgr-0c39bc9023f985126"
+vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_2
 }
@@ -29,11 +29,37 @@ resource "aws_instance" "three" {
 ami = "ami-04823729c75214919"
 instance_type = var.instance_type
 key_name = "Surabhi"
-vpc_security_group_ids = "sgr-0c39bc9023f985126"
+vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_3
 }
 }
+
+resource "aws_security_group" "four" {
+  name = "elb-sg"
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 
 variable "instance_type" {
 
