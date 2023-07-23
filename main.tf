@@ -8,7 +8,7 @@ secret_key = "mCw56eo4BgEHGnnJr7qMkVcmU7SYHspGQL8bPw5S"
 resource "aws_instance" "one" {
 ami = "ami-006935d9a6773e4ec"
 instance_type = var.instance_type
-key_name = "Surabhi"
+key_name = "mumbaikey"
 vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_1
@@ -18,7 +18,7 @@ Name = var.instance_name_1
 resource "aws_instance" "two" {
 ami = "ami-006935d9a6773e4ec"
 instance_type = var.instance_type
-key_name = "Surabhi"
+key_name = "mumbaikey"
 vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_2
@@ -28,7 +28,7 @@ Name = var.instance_name_2
 resource "aws_instance" "three" {
 ami = "ami-006935d9a6773e4ec"
 instance_type = var.instance_type
-key_name = "Surabhi"
+key_name = "mumbaikey"
 vpc_security_group_ids = [aws_security_group.four.id]
 tags = {
 Name = var.instance_name_3
