@@ -6,7 +6,6 @@ description = "it allows ssh,http and all"
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  
   }
 
   ingress {
